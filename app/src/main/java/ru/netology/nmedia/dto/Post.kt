@@ -8,5 +8,5 @@ data class Post (
     val likedByMe: Boolean = false,
     val likes: Int = 9999,
     val shares: Int = 999,
-    val views:Int = 9980,
+    val views:Int = 9980000,
 )

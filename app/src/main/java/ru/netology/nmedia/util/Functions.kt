@@ -1,7 +1,9 @@
-package ru.netology.nmedia.dto
+package ru.netology.nmedia.util
+
+import androidx.activity.viewModels
+import ru.netology.nmedia.viewmodel.PostViewModel
 
 object Functions {
-
     fun thousandsAndMillionsChanger(count: Int): String {
         return when (count) {
             in 0..999 -> count.toString()
@@ -20,5 +22,6 @@ object Functions {
                     }
         }
     }
+
 
 }
