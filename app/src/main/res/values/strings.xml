@@ -2,4 +2,9 @@
     <string name="app_name">NMedia</string>
     <string name="nmedia">NMedia!</string>
     <string name="avatar">Netology</string>
+    <string name="remove">Remove</string>
+    <string name="comtent_hint">Comtent</string>
+    <string name="epmpty_content_error">Content mustn\'t be empty</string>
+    <string name="edit">Edit</string>
+    <string name="editbar">Edit</string>
 </resources>

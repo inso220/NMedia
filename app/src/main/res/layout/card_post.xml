@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/common_spacing"
     tools:context=".MainActivity">
@@ -38,7 +38,7 @@
         android:contentDescription="@string/avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@sample/posts.json/data/authorAvatar" />
+        android:src="@drawable/ic_netology_48dp" />
 
     <ImageButton
         android:id="@+id/menu"
@@ -60,6 +60,8 @@
     <TextView
         android:id="@+id/content"
         android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_height="wrap_content"
         tools:text="@sample/posts.json/data/content"
         android:layout_marginTop="@dimen/common_spacing"
