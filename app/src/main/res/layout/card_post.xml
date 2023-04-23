@@ -40,14 +40,20 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_netology_48dp" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/menu"
+        style="@style/MenuButtonStyle"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/baseline_more_vert_24"
+        app:icon="@drawable/baseline_more_vert_24"
+        android:checkable="true"
+        android:checked="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:paddingVertical="0dp"
+        android:paddingHorizontal="@dimen/halfcommon_spacing"
+        app:iconSize="@dimen/icon_size"
         />
 
     <androidx.constraintlayout.widget.Barrier
@@ -68,15 +74,18 @@
         app:layout_constraintTop_toBottomOf="@id/bottomBarrier"
         />
 
-    <ImageButton
+    <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/likes"
+        style="@style/LikeStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/baseline_favorite_border_24"
+        android:button="@drawable/ic_like"
         android:background="@android:color/transparent"
-        android:layout_marginTop="@dimen/common_spacing"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/content"
+        app:iconSize="@dimen/icon_size"
+        android:layout_marginTop="@dimen/common_spacing"
+
         />
 
     <TextView
@@ -86,19 +95,24 @@
         android:text="10000"
         app:layout_constraintStart_toEndOf="@id/likes"
         app:layout_constraintTop_toTopOf="@id/likes"
-        android:layout_marginHorizontal="@dimen/halfcommon_spacing"
         app:layout_constraintBottom_toBottomOf="@+id/likes"
+        android:layout_marginStart="@dimen/halfcommon_spacing"
         />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/share"
+        style="@style/ShareStyle"
+        android:checkable="true"
+        tools:checked="true"
+        app:iconSize="@dimen/icon_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/baseline_share_24"
+        app:icon="@drawable/baseline_share_24"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@id/likesCount"
         app:layout_constraintTop_toBottomOf="@+id/content"
-        android:layout_marginTop="@dimen/common_spacing"
+        android:padding="0dp"
+        android:layout_marginTop="@dimen/threequarter_spacing"
         android:layout_marginEnd="@dimen/halfcommon_spacing"
         android:layout_marginStart="@dimen/common_spacing"
         />
@@ -110,7 +124,6 @@
         android:text="10000"
         app:layout_constraintStart_toEndOf="@+id/share"
         app:layout_constraintTop_toTopOf="@id/share"
-        android:layout_marginHorizontal="@dimen/halfcommon_spacing"
         app:layout_constraintBottom_toBottomOf="@+id/share"
         />
 

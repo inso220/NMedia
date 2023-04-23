@@ -13,4 +13,23 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="LikeStyle" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/like_button_tint</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="ShareStyle" parent="Widget.Material3.Button.Icon">
+        <item name="iconTint">@color/share_button_tint</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="MenuButtonStyle" parent="Widget.Material3.Button.Icon">
+        <item name="iconTint">@color/share_button_tint</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+    
 </resources>
