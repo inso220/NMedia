@@ -5,7 +5,5 @@
 
     <item android:color="?attr/colorControlNormal" />
 
-    <item android:name="android:minHeight" android:color="?attr/colorControlNormal">0dp</item>
-    <item android:name="android:minWidth" android:color="?attr/colorControlNormal">0dp</item>
 
 </selector>

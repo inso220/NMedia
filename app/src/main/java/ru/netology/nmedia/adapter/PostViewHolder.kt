@@ -20,21 +20,15 @@ class PostViewHolder(
             content.text = post.content
             published.text = post.published
 
-            viewsCount.text = Functions.thousandsAndMillionsChanger(post.views)
-            shareCount.text = Functions.thousandsAndMillionsChanger(post.shares)
-
-//            if (post.likedByMe) {
-//                likes.setImageResource(R.drawable.baseline_favorite_24)
-//            } else {
-//                likes.setImageResource(R.drawable.baseline_favorite_border_24)
-//            }
+            views.text = Functions.thousandsAndMillionsChanger(post.views)
+            share.text = Functions.thousandsAndMillionsChanger(post.shares)
 
             likes.isChecked = post.likedByMe
 
             likes.setOnClickListener {
                 listener.onLike(post)
             }
-            likesCount.text = Functions.thousandsAndMillionsChanger(post.likes)
+            likes.text = Functions.thousandsAndMillionsChanger(post.likes)
 
             share.setOnClickListener {
                 listener.onShare(post)

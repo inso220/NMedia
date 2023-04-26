@@ -4,4 +4,5 @@
     <dimen name="threequarter_spacing">12dp</dimen>
     <dimen name="halfcommon_spacing">8dp</dimen>
     <dimen name="icon_size">24dp</dimen>
+    <dimen name="likes_bar_text_size">14sp</dimen>
 </resources>
