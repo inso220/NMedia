@@ -8,4 +8,6 @@
     <string name="epmpty_content_error">Контент не должен быть пустым</string>
     <string name="edit">Редактировать</string>
     <string name="editbar">Редактирование</string>
+    <string name="chooser_share_post">Поделиться постом</string>
+    <string name="error_empty_content">Текст не может быть пустым</string>
 </resources>

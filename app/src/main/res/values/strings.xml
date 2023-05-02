@@ -7,4 +7,6 @@
     <string name="epmpty_content_error">Content mustn\'t be empty</string>
     <string name="edit">Edit</string>
     <string name="editbar">Edit</string>
+    <string name="chooser_share_post">Share post</string>
+    <string name="error_empty_content">Content can\'t be empty</string>
 </resources>

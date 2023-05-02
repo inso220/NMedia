@@ -22,7 +22,7 @@ class PostViewModel : ViewModel() {
     fun shareById(id: Long) = repository.shareById(id)
     fun removeById(id: Long) = repository.removeById(id)
 
-    val edited = MutableLiveData(empty)
+    private val edited = MutableLiveData(empty)
 
     fun save() {
         edited.value?.let {
@@ -35,9 +35,6 @@ class PostViewModel : ViewModel() {
         edited.value = post
     }
 
-    fun clearEdit() {
-        edited.value = empty
-    }
 
     fun changeContent (content: String) {
         edited.value?.let {post ->
