@@ -17,7 +17,7 @@ class EditPostActivity : AppCompatActivity() {
 
         binding.content.setText(intent?.getStringExtra(Intent.EXTRA_TEXT))
         binding.ok.setOnClickListener {
-            val text = binding.content.toString()
+            val text = binding.content.text.toString()
             if (text.isBlank()) {
                 setResult(Activity.RESULT_CANCELED)
             } else {

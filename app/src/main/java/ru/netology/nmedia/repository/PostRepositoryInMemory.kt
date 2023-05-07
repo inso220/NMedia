@@ -13,7 +13,7 @@ class PostRepositoryInMemory : PostRepository {
             author = "Нетология. Университет интернет-профессий будущего",
             content = "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb",
             published = "21 мая в 18:36",
-            likedByMe = false
+            likedByMe = false,
         ),
         Post(
             id = nextId++,
@@ -62,7 +62,8 @@ class PostRepositoryInMemory : PostRepository {
             author = "Нетология. Университет интернет-профессий будущего",
             content = "Делиться впечатлениями о любимых фильмах легко, а что если рассказать так, чтобы все заскучали \uD83D\uDE34\n",
             published = "22 сентября в 10:14",
-            likedByMe = false
+            likedByMe = false,
+            video = "https://www.youtube.com/watch?v=WhWc3b3KhnY"
         ),
         Post(
             id = nextId++,
@@ -115,7 +116,7 @@ class PostRepositoryInMemory : PostRepository {
     }
 
     override fun save(post: Post) {
-        if(post.id == 0L) {
+        if (post.id == 0L) {
             posts = listOf(
                 post.copy(
                     id = nextId++,
@@ -128,7 +129,7 @@ class PostRepositoryInMemory : PostRepository {
         }
 
         posts = posts.map {
-            if(it.id != post.id) it else it.copy(content = post.content)
+            if (it.id != post.id) it else it.copy(content = post.content)
         }
         data.value = posts
     }

@@ -1,5 +1,6 @@
 package ru.netology.nmedia.adapter
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -12,6 +13,7 @@ interface PostListener {
     fun onEdit(post: Post)
     fun onLike(post: Post)
     fun onShare(post: Post)
+    fun onVideo(post: Post)
 }
 
 class PostAdapter(

@@ -1,6 +1,7 @@
 package ru.netology.nmedia.activity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -63,6 +64,14 @@ class MainActivity : AppCompatActivity() {
                         Intent.createChooser(intent, getString(R.string.chooser_share_post))
                     startActivity(startIntent)
                 }
+
+                override fun onVideo(post: Post) {
+                    val intent =
+                        Intent(Intent.ACTION_VIEW, Uri.parse(post.video))
+
+                    startActivity(intent)
+                }
+
             }
         )
 
@@ -70,45 +79,7 @@ class MainActivity : AppCompatActivity() {
             newPostContract.launch()
         }
 
-//        viewModel.edited.observe(this) {
-//            if (it.id == 0L) {
-//                binding.clearedit.visibility = View.GONE
-//                return@observe
-//            }
-//            binding.clearedit.visibility = View.VISIBLE
-//            binding.content.requestFocus()
-//            binding.content.setText(it.content)
-//        }
-//
-//        binding.clearedit.setOnClickListener {
-//            with(binding.content) {
-//                viewModel.clearEdit()
-//                setText("")
-//                clearFocus()
-//                Functions.hideKeyboard(this)
-//            }
-//        }
-//
-//        binding.save.setOnClickListener {
-//            with(binding.content) {
-//                val content = text.toString()
-//                if (content.isNullOrBlank()) {
-//                    Toast.makeText(
-//                        this@MainActivity,
-//                        R.string.epmpty_content_error,
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                    return@setOnClickListener
-//                }
-//
-//                viewModel.changeContent(content)
-//                viewModel.save()
-//
-//                setText("")
-//                clearFocus()
-//                Functions.hideKeyboard(this)
-//            }
-//        }
+
 
         viewModel.data.observe(this) { posts ->
             adapter.submitList(posts)

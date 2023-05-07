@@ -1,5 +1,7 @@
 package ru.netology.nmedia.adapter
 
+import android.net.Uri
+import android.view.View
 import android.widget.PopupMenu
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -18,6 +20,17 @@ class PostViewHolder(
 
     fun bind(post: Post) {
         with(binding) {
+
+            if(post.video != null) {
+                videopreview.visibility = View.VISIBLE
+                playvideobutton.visibility = View.VISIBLE
+            }
+            playvideobutton.setOnClickListener {
+                listener.onVideo(post)
+            }
+            videopreview.setOnClickListener {
+                listener.onVideo(post)
+            }
 
             author.text = post.author
             content.text = post.content
