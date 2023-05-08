@@ -21,9 +21,12 @@ class PostViewHolder(
     fun bind(post: Post) {
         with(binding) {
 
-            if(post.video != null) {
+            if(!post.video.isNullOrBlank()) {
                 videopreview.visibility = View.VISIBLE
                 playvideobutton.visibility = View.VISIBLE
+            } else {
+                videopreview.visibility = View.GONE
+                playvideobutton.visibility = View.GONE
             }
             playvideobutton.setOnClickListener {
                 listener.onVideo(post)

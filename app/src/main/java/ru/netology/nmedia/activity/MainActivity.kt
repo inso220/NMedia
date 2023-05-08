@@ -88,6 +88,11 @@ class MainActivity : AppCompatActivity() {
         binding.list.adapter = adapter
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.clearEdit()
+    }
+
 }
 
 
