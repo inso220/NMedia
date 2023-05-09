@@ -1,5 +1,6 @@
 package ru.netology.nmedia.activity
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.launch
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
 import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.PostAdapter
 import ru.netology.nmedia.adapter.PostListener
@@ -34,8 +36,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val prefs = getSharedPreferences("posts", Context.MODE_PRIVATE)
+        prefs.edit().apply{
+            putString("key", "test")
+            apply()
+        }
+
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        val previousResult = prefs.getString("key", null)
+//        Snackbar.make(binding.root, previousResult.orEmpty(), Snackbar.LENGTH_LONG).show()
+
+
 
         val adapter = PostAdapter(
             object : PostListener {
