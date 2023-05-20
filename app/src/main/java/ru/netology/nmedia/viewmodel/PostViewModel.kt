@@ -1,15 +1,13 @@
 package ru.netology.nmedia.viewmodel
 
 import android.app.Application
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import ru.netology.nmedia.db.AppDb
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.repository.PostRepository
-import ru.netology.nmedia.repository.PostRepositoryInMemory
+import ru.netology.nmedia.repository.PostRepositorySQLiteImpl
 
 private val empty = Post(
     id = 0,
@@ -17,9 +15,14 @@ private val empty = Post(
     content = "",
     published = "",
     likedByMe = false,
+    likes=0,
+    shares = 0,
+    views = 0
 )
 class PostViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository: PostRepository = PostRepositoryInMemory(application)
+    private val repository: PostRepository = PostRepositorySQLiteImpl(
+        AppDb.getInstance(application).postDao
+    )
 
     val data: LiveData<List<Post>> = repository.getData()
     fun likeById(id: Long) = repository.likeById(id)

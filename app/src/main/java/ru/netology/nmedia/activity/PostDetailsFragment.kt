@@ -89,9 +89,6 @@ class PostDetailsFragment : Fragment() {
                     ).bind(post)
                 }
             }
-
-
-
         }
 
         return binding.root
