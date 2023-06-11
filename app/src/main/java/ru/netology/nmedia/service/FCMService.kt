@@ -41,10 +41,21 @@ class FCMService : FirebaseMessagingService() {
         message.data[action]?.let {
             try {
                 when (Action.valueOf(it)) {
-                    Action.POST -> handlePost(gson.fromJson(message.data[postContent], Post::class.java))
-                    Action.LIKE -> handleLike(gson.fromJson(message.data[content], Like::class.java))
+                    Action.POST -> handlePost(
+                        gson.fromJson(
+                            message.data[postContent],
+                            Post::class.java
+                        )
+                    )
+                    Action.LIKE -> handleLike(
+                        gson.fromJson(
+                            message.data[content],
+                            Like::class.java
+                        )
+                    )
                 }
-            } catch (_: Exception) { }
+            } catch (_: Exception) {
+            }
         }
     }
 
@@ -70,10 +81,17 @@ class FCMService : FirebaseMessagingService() {
             .setContentTitle(
                 getString(
                     R.string.notification_post,
-                    postContent.content,
+                    postContent.author,
                 )
             )
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setStyle(NotificationCompat.BigTextStyle()
+                .bigText(
+                    getString(
+                        R.string.notification_post_message,
+                        postContent.content,
+                    )
+                ))
             .build()
 
         notify(notification)
@@ -110,5 +128,6 @@ data class Like(
 )
 
 data class Post(
-    val content: String
+    val content: String,
+    val author: String
 )
